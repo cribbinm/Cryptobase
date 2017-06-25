@@ -1,13 +1,16 @@
 from django.db import models
-from django.utils import timezone
+# from django.utils import timezone
+import time
 
 
 class Price(models.Model):
-    published_date = models.DateTimeField(default=timezone.now)
+    # published_date = models.DateTimeField(default=timezone.now)
     # xbt = models.DecimalField(max_digits=15, decimal_places=9)
     # eth = models.DecimalField(max_digits=15, decimal_places=9)
-    xbt = models.CharField(max_length=200)
-    eth = models.CharField(max_length=200)
+    # timestamp = int(time.time())
+    entry = models.FloatField()
+    xbt = models.FloatField()
+    eth = models.FloatField()
 
-    def __str__(self):
-        return self.xbt
+    # def __str__(self):
+    #     return self.xbt
